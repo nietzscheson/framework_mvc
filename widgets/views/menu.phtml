@@ -1,0 +1,16 @@
+<nav id="nav-menu">
+<?php if (isset($menu)):?>
+	<ul class="list-group">
+	<?php foreach($menu as $m):?>
+		<?php if(isset($m["item"]) && $m["item"] == $m["id"]): ?>
+            <?php $_item_style = 'active'; ?>
+        <?php else:?>
+            <?php $_item_style = ''; ?>
+	      <a href="<?php echo $m['enlace']?>" class="list-group-item <?php echo $_item_style?>">
+	      	<span class="glyphicon glyphicon-<?php if(isset($m['icono'])); echo $m['icono'];?>"></span> <?php echo $m["titulo"]?>
+	      </a>
+	      <?php endif;?>
+	<?php endforeach;?>
+	</ul>
+<?php endif;?>
+</nav>
